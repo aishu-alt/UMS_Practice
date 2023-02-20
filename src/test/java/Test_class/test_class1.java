@@ -13,12 +13,12 @@ import net.bytebuddy.utility.RandomString;
 
 public class test_class1 extends base_class													//base class extends in test_class1
 {
-	@BeforeClass
+	@BeforeTest
 	public void InitialiseBrowser() throws InterruptedException 
 	{
 		OpenBrowser();
+		Thread.sleep(1000); 
 		driver.manage().window().maximize();
-			
 		pom_class pom = new pom_class(driver);
 		((JavascriptExecutor)driver).executeScript("window.scrollBy(0,500)");				//for scrollbar
 		pom.EnterUN();  
@@ -31,7 +31,7 @@ public class test_class1 extends base_class													//base class extends in 
 
 	}
 	
-	@Test(enabled=false)
+	@Test()
 	public void test1() throws InterruptedException 																		//positive test case
 	{
 		String data1=RandomStringUtils.randomNumeric(5);											//for random alpanumeric data				
@@ -55,7 +55,6 @@ public class test_class1 extends base_class													//base class extends in 
 		driver.findElement(By.xpath("//input[@placeholder=\"Search\"]")).sendKeys("Delhi");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//i[@aria-hidden=\"true\"])[2]")).click();
-		driver.
 		driver.findElement(By.xpath("//input[@placeholder=\"District Name\"]")).sendKeys("New Delhi");
 		driver.findElement(By.xpath("(//button[@type=\"submit\"])[1]")).click();
 		driver.findElement(By.xpath("//button[text()=' Close ']")).click();

@@ -5,16 +5,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class base_class {
 	
-	public WebDriver driver;				//declare publically webdriver driver
-	public void OpenBrowser()			    //browser open
+	public WebDriver driver;	//declare publically webdriver driver
 	
-	//open chrome browser
+	public void OpenBrowser()			    //browser open
 	{ 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Documents\\sel\\chromedriver_win32 (2)\\chromedriver.exe");
+//	    System.setProperty("webdriver.chrome.driver", "D:\\selenium files\\chromedriver_win32 (2)\\LICENSE.chromedriver");
 		driver = new ChromeDriver();
 		driver.get("http://192.168.1.103:4990/student-login");
-		driver.manage().window().maximize();
-		
+		driver.manage().window().maximize();	
 	}
 	
 	
