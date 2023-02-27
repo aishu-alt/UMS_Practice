@@ -9,12 +9,11 @@ public class base_class {
 	
 	public void OpenBrowser()			    //browser open
 	{ 
-//	    System.setProperty("webdriver.chrome.driver", "D:\\selenium files\\chromedriver_win32 (2)\\LICENSE.chromedriver");
+	    System.setProperty("webdriver.chrome.driver", "D:\\selenium_files\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://192.168.1.103:4990/student-login");
 		driver.manage().window().maximize();	
 	}
-	
 	
 
 }

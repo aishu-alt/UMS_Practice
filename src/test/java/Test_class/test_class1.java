@@ -23,40 +23,57 @@ public class test_class1 extends base_class													//base class extends in 
 		((JavascriptExecutor)driver).executeScript("window.scrollBy(0,500)");				//for scrollbar
 		pom.EnterUN();  
 		pom.EnterPWD(); 
-		Thread.sleep(10000); 
-		
 		pom.ClickLoginButton();
-	    Thread.sleep(2000);
+		Thread.sleep(1000); 
 		driver.navigate().refresh();
 
 	}
 	
 	@Test()
-	public void test1() throws InterruptedException 																		//positive test case
+	public void test1() throws InterruptedException
 	{
-		String data1=RandomStringUtils.randomNumeric(5);											//for random alpanumeric data				
-		String data2=RandomStringUtils.randomAlphabetic(10);									//for random numeric data
-		driver.findElement(By.xpath("(//a[@class=\"nav-sub-link\"])[2]")).click();
-		driver.findElement(By.xpath("(//button[@type=\"button\"])[2]")).click();
-		driver.findElement(By.xpath("//input[@type=\"text\"]")).sendKeys(data1);					//pass sendkeys as "data" varialble 
-		driver.findElement(By.xpath("//input[@formcontrolname=\"DsName\"]")).sendKeys(data2);	//passing sendkeys as "data1" variable 
-		driver.findElement(By.xpath("(//button[@type=\"submit\"])[1]")).click();
+		driver.findElement(By.xpath("(//span[@class=\"sidemenu-label\"])[2]")).click();
+		
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[text()=' Close ']")).click();
-		driver.findElement(By.xpath("(//button[@type=\"submit\"])[2]")).click();
-	
-	
+		driver.findElement(By.xpath("//a[@id=\"College\"]")).click();
+		driver.findElement(By.xpath("//button [text()=\" Add New Record \"]")).click();
+		String data3=RandomStringUtils.randomNumeric(5);											//for random alpanumeric data				
+		String data4=RandomStringUtils.randomAlphabetic(4);	
+		driver.findElement(By.xpath("//input[@formcontrolname=\"CgCode\"]")).sendKeys(data3);
+		driver.findElement(By.xpath("//input[@formcontrolname=\"CgShName\"]")).sendKeys("MIT "+"("+data4+")");
 	}
 	
-	@Test
-	public void test2() throws InterruptedException 
-	{
-		driver.findElement(By.xpath("(//a[@class=\"nav-sub-link\"])[2]")).click();
-		driver.findElement(By.xpath("//input[@placeholder=\"Search\"]")).sendKeys("Delhi");
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//i[@aria-hidden=\"true\"])[2]")).click();
-		driver.findElement(By.xpath("//input[@placeholder=\"District Name\"]")).sendKeys("New Delhi");
-		driver.findElement(By.xpath("(//button[@type=\"submit\"])[1]")).click();
-		driver.findElement(By.xpath("//button[text()=' Close ']")).click();
-	}
+	
+	
+//	@Test()
+//	public void test2() throws InterruptedException 																		//positive test case
+//	{
+//		String data1=RandomStringUtils.randomNumeric(5);											//for random alpanumeric data				
+//		String data2=RandomStringUtils.randomAlphabetic(10);									//for random numeric data
+//		driver.findElement(By.xpath("(//a[@class=\"nav-sub-link\"])[2]")).click();
+//		driver.findElement(By.xpath("(//button[@type=\"button\"])[2]")).click();
+//		driver.findElement(By.xpath("//input[@type=\"text\"]")).sendKeys(data1);					//pass sendkeys as "data" varialble 
+//		driver.findElement(By.xpath("//input[@formcontrolname=\"DsName\"]")).sendKeys(data2);	//passing sendkeys as "data1" variable 
+//		driver.findElement(By.xpath("(//button[@type=\"submit\"])[1]")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//button[text()=' Close ']")).click();
+//		driver.findElement(By.xpath("(//button[@type=\"submit\"])[2]")).click();
+//	
+//	
+//	}
+	
+	
+	
+	
+//	@Test
+//	public void test3() throws InterruptedException 
+//	{
+//		driver.findElement(By.xpath("(//a[@class=\"nav-sub-link\"])[2]")).click();
+//		driver.findElement(By.xpath("//input[@placeholder=\"Search\"]")).sendKeys("Delhi");
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("(//i[@aria-hidden=\"true\"])[2]")).click();
+//		driver.findElement(By.xpath("//input[@placeholder=\"District Name\"]")).sendKeys("New Delhi");
+//		driver.findElement(By.xpath("(//button[@type=\"submit\"])[1]")).click();
+//		driver.findElement(By.xpath("//button[text()=' Close ']")).click();
+//	}
 }
