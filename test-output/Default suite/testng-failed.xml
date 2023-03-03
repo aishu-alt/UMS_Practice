@@ -5,8 +5,8 @@
     <classes>
       <class name="Test_class.test_class1">
         <methods>
-          <include name="test1"/>
           <include name="InitialiseBrowser"/>
+          <include name="test2"/>
         </methods>
       </class> <!-- Test_class.test_class1 -->
     </classes>
